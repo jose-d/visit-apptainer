@@ -1,0 +1,24 @@
+Bootstrap: docker
+From: fedora:31
+
+%environment
+    export PATH=/usr/local/visit/bin:${PATH}
+    export LC_ALL=C
+
+%post
+
+dnf -y install wget which
+dnf -y group install "Xfce"
+dnf -y group install "Development Tools"
+
+# specific deps of Visit
+dnf -y install xterm
+
+cd /tmp
+
+wget -nc https://github.com/visit-dav/visit/releases/download/v3.3.3/visit-install3_3_3
+wget -nc https://github.com/visit-dav/visit/releases/download/v3.3.3/visit3_3_3.linux-x86_64-fedora31.tar.gz
+
+chmod +x ./visit-install3_3_3
+
+./visit-install3_3_3 -c none 3.3.3 linux-x86_64-fedora31 /usr/local/visit
