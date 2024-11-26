@@ -13,12 +13,14 @@ dnf -y group install "Development Tools"
 
 # specific deps of Visit
 dnf -y install xterm
+# required since 3.4.1(?):
+dnf -y install libxkbcommon-x11 xcb-util-*
 
 cd /tmp
 
-wget -nc https://github.com/visit-dav/visit/releases/download/v3.3.3/visit-install3_3_3
-wget -nc https://github.com/visit-dav/visit/releases/download/v3.3.3/visit3_3_3.linux-x86_64-fedora31.tar.gz
+wget -nc https://github.com/visit-dav/visit/releases/download/v3.4.1/visit-install3_4_1
+wget -nc https://github.com/visit-dav/visit/releases/download/v3.4.1/visit3_4_1.linux-x86_64-fedora31.tar.gz
 
-chmod +x ./visit-install3_3_3
+chmod +x ./visit-install3_4_1
 
-./visit-install3_3_3 -c none 3.3.3 linux-x86_64-fedora31 /usr/local/visit
+./visit-install3_4_1 -c none 3.4.1 linux-x86_64-fedora31 /usr/local/visit
