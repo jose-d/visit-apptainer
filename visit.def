@@ -24,3 +24,8 @@ wget -nc https://github.com/visit-dav/visit/releases/download/v3.4.1/visit3_4_1.
 chmod +x ./visit-install3_4_1
 
 ./visit-install3_4_1 -c none 3.4.1 linux-x86_64-fedora31 /usr/local/visit
+
+%runscript
+# if container executed directly, visit is executed:
+
+/usr/local/visit/bin/visit
