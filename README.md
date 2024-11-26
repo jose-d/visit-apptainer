@@ -10,6 +10,14 @@ apptainer build image.sif ./visit.def
 
 ## run
 
+Using apptainer exec:
+
 ```
 apptainer exec image.sif visit
+```
+
+or directly just by running image, as `%runscript` is defined:
+
+```
+./image.sif
 ```
